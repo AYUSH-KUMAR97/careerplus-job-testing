@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerPulse | Job Portal & Interview Preparation</title>
+    <meta name="description"
+        content="Find your dream job and prepare for it with our comprehensive DSA and OS preparation guides.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo" onclick="showSection('home')">
+                <span class="logo-accent">Career</span>Pulse
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#" onclick="showSection('home')">Home</a></li>
+                    <li><a href="#" onclick="showSection('jobs')">Find Jobs</a></li>
+                    <li><a href="#" onclick="showSection('prep')">Preparation</a></li>
+                    <li><a href="#" class="btn-primary">Sign In</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <div class="container hero-grid">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Bridge the Gap Between <span class="text-gradient">Ready</span> and <span
+                                class="text-gradient">Hired</span></h1>
+                        <p class="hero-subtitle">The all-in-one platform to find tech jobs and master the fundamentals
+                            of DSA, OS, and System Design.</p>
+                        <div class="hero-actions">
+                            <button class="btn-primary btn-large" onclick="showSection('jobs')">Browse Jobs</button>
+                            <button class="btn-outline btn-large" onclick="showSection('prep')">Start Preparing</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="featured-categories container">
+                <h2 class="section-title">Top Job Categories</h2>
+                <div class="category-grid">
+                    <div class="category-card" onclick="showSection('jobs', 'Frontend')">
+                        <div class="icon">💻</div>
+                        <h3>Frontend</h3>
+                        <p>120+ Openings</p>
+                    </div>
+                    <div class="category-card" onclick="showSection('jobs', 'Backend')">
+                        <div class="icon">⚙️</div>
+                        <h3>Backend</h3>
+                        <p>85+ Openings</p>
+                    </div>
+                    <div class="category-card" onclick="showSection('jobs', 'Fullstack')">
+                        <div class="icon">🚀</div>
+                        <h3>Fullstack</h3>
+                        <p>150+ Openings</p>
+                    </div>
+                    <div class="category-card" onclick="showSection('jobs', 'DevOps')">
+                        <div class="icon">☁️</div>
+                        <h3>DevOps</h3>
+                        <p>45+ Openings</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Jobs Section -->
+        <section id="jobs" class="section">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Explore <span class="text-gradient">Opportunities</span></h1>
+                    <div class="search-bar">
+                        <input type="text" id="jobSearch" placeholder="Search by role, company, or skills...">
+                        <button class="btn-primary">Search</button>
+                    </div>
+                </div>
+
+                <div class="jobs-layout">
+                    <aside class="filters">
+                        <h3>Filters</h3>
+                        <div class="filter-group">
+                            <label>Job Type</label>
+                            <label class="checkbox-container">Full-time
+                                <input type="checkbox" checked="checked">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-container">Remote
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-container">Contract
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </aside>
+                    <div class="job-list" id="jobGrid">
+                        <!-- Job cards will be injected by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prep Section -->
+        <section id="prep" class="section">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Master Your <span class="text-gradient">Fundamentals</span></h1>
+                    <p>Structured preparation modules for top-tier tech interviews.</p>
+                </div>
+
+                <div class="prep-grid">
+                    <div class="prep-card highlight">
+                        <div class="prep-image dsa-bg"></div>
+                        <div class="prep-info">
+                            <span class="badge">Popular</span>
+                            <h2>Data Structures & Algorithms</h2>
+                            <p>From basic Arrays to advanced Graph algorithms and Dynamic Programming.</p>
+                            <div class="prep-meta">
+                                <span>📚 48 Lessons</span>
+                                <span>⏱️ 20 Hours</span>
+                            </div>
+                            <button class="btn-primary full-width" onclick="viewModule('dsa')">Explore DSA</button>
+                        </div>
+                    </div>
+
+                    <div class="prep-card">
+                        <div class="prep-image os-bg"></div>
+                        <div class="prep-info">
+                            <h2>Operating Systems</h2>
+                            <p>Master Process Management, Memory Management, and Concurrency.</p>
+                            <div class="prep-meta">
+                                <span>📚 24 Lessons</span>
+                                <span>⏱️ 10 Hours</span>
+                            </div>
+                            <button class="btn-primary full-width" onclick="viewModule('os')">Explore OS</button>
+                        </div>
+                    </div>
+
+                    <div class="prep-card">
+                        <div class="prep-image dbms-bg"></div>
+                        <div class="prep-info">
+                            <h2>Database Management</h2>
+                            <p>SQL, NoSQL, Normalization, and Indexing strategies for performance.</p>
+                            <div class="prep-meta">
+                                <span>📚 18 Lessons</span>
+                                <span>⏱️ 12 Hours</span>
+                            </div>
+                            <button class="btn-primary full-width" onclick="viewModule('dbms')">Explore DBMS</button>
+                        </div>
+                    </div>
+
+                    <div class="prep-card">
+                        <div class="prep-image networking-bg"></div>
+                        <div class="prep-info">
+                            <h2>Computer Networks</h2>
+                            <p>TCP/IP, OSI Layers, HTTP, and Security protocols explained.</p>
+                            <div class="prep-meta">
+                                <span>📚 15 Lessons</span>
+                                <span>⏱️ 8 Hours</span>
+                            </div>
+                            <button class="btn-primary full-width" onclick="viewModule('networking')">Explore
+                                Networking</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Module Detail Section (Dynamic) -->
+        <section id="module-detail" class="section">
+            <div class="container">
+                <button class="btn-back" onclick="showSection('prep')">← Back to Preparation</button>
+                <div id="module-content">
+                    <!-- Dynamic content -->
+                </div>
+            </div>
+        </section>
+        <!-- Lesson Content Section -->
+        <section id="lesson-view" class="section">
+            <div class="container">
+                <button class="btn-back" id="backToModule">← Back to Module</button>
+                <div id="lesson-content" class="lesson-content-wrapper">
+                    <!-- Dynamic lesson content -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo">
+                    <span class="logo-accent">Career</span>Pulse
+                </div>
+                <p>Empowering developers to reach their career goals with better jobs and smarter prep.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#" onclick="showSection('home')">Home</a></li>
+                    <li><a href="#" onclick="showSection('jobs')">Find Jobs</a></li>
+                    <li><a href="#" onclick="showSection('prep')">Preparation</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Newsletter</h4>
+                <p>Get the latest job alerts and study guides.</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Email address">
+                    <button class="btn-primary">Join</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 CareerPulse. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
