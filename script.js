@@ -4,7 +4,7 @@ const jobs = [
         title: "Senior Frontend Engineer",
         company: "Aura Systems",
         location: "Remote",
-        salary: "$140k - $180k",
+        salary: "$2900 - $3500",
         type: "Full-time",
         tags: ["React", "TypeScript", "Tailwind"],
         logo: "https://api.dicebear.com/7.x/identicon/svg?seed=Aura"
@@ -223,3 +223,4 @@ document.getElementById('jobSearch')?.addEventListener('input', (e) => {
 window.onload = () => {
     showSection('home');
 };
+
